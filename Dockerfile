@@ -12,7 +12,7 @@ RUN git clone https://github.com/PremierLangage/wims-lti.git
 
 WORKDIR wims-lti
 
-RUN ./install.sh
+RUN git checkout 0.4.4 && ./install.sh
 
 RUN mkdir data && \
     mv wimsLTI/config.py data/ && \
