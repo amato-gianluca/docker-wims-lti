@@ -6,8 +6,6 @@ A volume is created, containing both the configuration file `config.py` and the 
 
 In general, this image has only been developed for my personal needs, so be careful when using it. A better and more general image will be provided in the future.
 
-This image is relative to the 0.4.4 version of WIMS-LTI.
-
 ## Example deployment
 
 This an example of `docker-compose.yml` usable for deployment of the image trough Docker Compose, behind a reverse proxy.
