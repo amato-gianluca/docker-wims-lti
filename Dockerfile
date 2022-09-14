@@ -8,11 +8,17 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
       git \
       python3-pip
 
-RUN git clone https://github.com/PremierLangage/wims-lti.git
+ARG tag
+
+RUN if [ "$tag" = "dev" ]; then  \
+      git clone https://github.com/amato-gianluca/wims-lti.git; \
+    else \
+      git clone https://github.com/PremierLangage/wims-lti.git; \
+    fi
 
 WORKDIR wims-lti
 
-RUN git checkout $DOCKER_TAG && ./install.sh
+RUN git checkout && ./install.sh
 
 RUN mkdir data && \
     mv wimsLTI/config.py data/ && \

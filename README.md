@@ -4,6 +4,8 @@ This docker image contains [WIMS-LTI](https://github.com/PremierLangage/wims-lti
 
 A volume is created, containing both the configuration file `config.py` and the SQLite database `db.sqlite3`, so that they persist after upgrades. However, I suspect this may not work when the upgrade involves the upstream version of WIMS-LTI. It seems that WIMS-LTI executes the migration script only during installation, which is performed during image creation, i.e., too early to be useful.
 
+The `tag` build argument may be used to choose between my repository (https://github.com/amato-gianluca/docker-wims-lti), when `tag=dev` or the official one (https://github.com/PremierLangage/wims-lti), for all other values of `tag`.
+
 In general, this image has only been developed for my personal needs, so be careful when using it. A better and more general image will be provided in the future.
 
 ## Example deployment
